@@ -3,14 +3,14 @@ var bcrypt   = require('bcryptjs');
 
 var sign = mongoose.Schema({
 
-      Name:      String,
-      Email:     String,
-      Password:  String,
-      Mobile:    Number,
-      Dates:     Number,
-      Month:     String,
-      Year:      Number,
-      Gender:    String
+      Name     : {type : String, required: true},
+      Email    : {type : String, required: true, index: {unique: true}},
+      Password : {type : String, required: true},
+      Mobile   : {type : Number, required: true},
+      Dates    : {type : Number, required: true},
+      Month    : {type : String, required: true},
+      Year     : {type : Number, required: true},
+      Gender   : {type : String, required: true}
 
   });
 
