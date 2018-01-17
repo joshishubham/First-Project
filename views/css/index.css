@@ -1,0 +1,66 @@
+/*css document*/
+
+body{
+
+    background-color:white;
+    //background-repeat: no-repeat;
+    background-size: 500px 601px;
+    padding-bottom: 10px; 
+    padding-left: 20px;
+}
+
+form{
+
+    color: black;
+    width: 11cm;
+    height: 20cm;
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
+    margin-left: 21cm; 
+}
+
+input{
+
+    width: 65%;
+    margin-left: .9cm;
+    padding: 18px 7px;
+    height: 5%;
+    font-size: 18px;
+}
+
+button{
+
+    margin-left: 4cm;
+    margin-top: -.2cm;
+}
+
+p{
+
+    font-size: 20px;
+    margin-left: 3cm;
+}
+
+h5{
+
+    margin-left:.20cm;
+    font-size: 20px;
+}
+
+h4{
+
+    margin-left:.20cm;
+    font-size: 20px
+}
+
+select{
+
+    width: 19%;
+    padding: 8px 3px;
+    font-size: 15px;
+}
+
+label{
+
+    margin-left: .9cm;
+    font-size: 15px
+}
