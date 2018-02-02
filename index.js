@@ -31,7 +31,7 @@ app.use(session({
 
 app.get('/', function (req, res) {
 	  
-	  res.render('index.ejs', {message: req.flash('msg')});
+	  res.render('index.ejs');
 
 });
 
