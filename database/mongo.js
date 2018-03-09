@@ -15,12 +15,3 @@ var sign = mongoose.Schema({
   });
 
 var Sign = module.exports = mongoose.model("Sign", sign);
-
-module.exports.database = function (data, callback) {
-    var salt = bcrypt.genSalt(10, function (err, salt) {
-      var hash =  bcrypt.hash(data.Password, salt, function(err, hash) {
-                    data.Password = hash;
-                      data.save(callback);
-          });
-      });
-}
