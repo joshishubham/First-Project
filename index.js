@@ -38,12 +38,10 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
 
 	 var data = new Sign(req.body);
+      data.save();
        req.flash('msg', "Data safe successfull in database !..");
-
-      Sign.database(data, function (err, user){ 
-          if (err) throw err;
-              res.redirect('/flash')
-    });
+       	res.redirect('/flash');
+            
 });
 
 app.get('/flash', function (req, res) {
