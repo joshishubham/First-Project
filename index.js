@@ -5,6 +5,7 @@ var cp       = require('cookie-parser');
 var session  = require('express-session');
 var flash    = require('connect-flash');
 var Sign     = require('./database/mongo.js');
+var bcrypt 	 = require('bcryptjs');
 var app      = express();
 
 mongoose.Promise = global.Promise
@@ -37,11 +38,31 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
 
-	 var data = new Sign(req.body);
-      data.save();
-       req.flash('msg', "Data safe successfull in database !..");
+bcrypt.genSalt(10, function(err, salt) {
+     bcrypt.hash(req.body.Password, salt, function(err, hash) {
+
+   
+	 var data = new Sign({
+
+	 	  Name     : req.body.Name,
+	 	  Email    : req.body.Email,
+	 	  Password : hash,
+	 	  Confirm  : req.body.Confirm,
+   		  Mobile   : req.body.Mobile,
+		  Dates    : req.body.Dates,
+		  Month    : req.body.Month,
+		  Year     : req.body.Year,
+		  Gender   : req.body.Gender
+
+	 });
+        
+        data.save();
+        req.flash('msg', "Data safe successfull in database !..");
        	res.redirect('/flash');
-            
+       	console.log(data)
+
+    });	 
+  });          
 });
 
 app.get('/flash', function (req, res) {
