@@ -7,7 +7,7 @@ function showError(x, y, z) {
 	alert(x + " , " + y + " , " + z);
 }
 
-function s(txt) {
+function s() {
     
 	name     = document.myform.Name.value;
 	email    = document.myform.Email.value;
@@ -117,7 +117,7 @@ function s(txt) {
 		return false;
 
 	}
-	if (gender == "select") {
+	if (gender == "Select") {
 		alert("Please enter your gender.");
 
 		return false;
