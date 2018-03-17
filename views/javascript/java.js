@@ -123,10 +123,6 @@ function s() {
 		return false;
 
 	}
-	else {
-		return true;
-	}
-
 }
 
 //-->
